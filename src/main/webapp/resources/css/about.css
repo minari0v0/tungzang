@@ -1,0 +1,256 @@
+/* 소개 페이지 스타일 */
+
+/* 히어로 섹션 */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s 0.2s forwards;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    background-color: #4263eb;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s 0.4s forwards;
+}
+
+.hero-button:hover {
+    background-color: #364fc7;
+    color: white;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 1.5s infinite;
+}
+
+/* 특징 섹션 */
+.features-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s;
+}
+
+.feature-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: rgba(66, 99, 235, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon svg {
+    color: #4263eb;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.feature-description {
+    color: #6c757d;
+}
+
+/* CTA 섹션 */
+.cta-section {
+    position: relative;
+    padding: 4rem 2rem;
+    border-radius: 0.75rem;
+    background-color: #4263eb;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s;
+}
+
+.cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0;
+}
+
+.cta-title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+}
+
+.cta-description {
+    position: relative;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.cta-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    background-color: white;
+    color: #4263eb;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    background-color: #f8f9fa;
+    color: #4263eb;
+}
+
+/* 스토리 섹션 */
+.story-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s;
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .cta-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-description {
+        font-size: 1.125rem;
+    }
+}

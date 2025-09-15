@@ -1,0 +1,1283 @@
+/* 부트스트랩 아이콘 추가 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css");
+
+/* 텅장수강러 스타일시트 */
+:root {
+    --primary-color: #4263eb;
+    --primary-hover: #3b5bdb;
+    --secondary-color: #f8f9fa;
+    --text-color: #343a40;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --success-color: #40c057;
+    --danger-color: #fa5252;
+    --warning-color: #fd7e14;
+    --info-color: #15aabf;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* 헤더 스타일 */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* 메인 컨테이너 */
+.container {
+    max-width: 1200px;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 카드 스타일 */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover 효과 제거 클래스 */
+.no-hover:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.25rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-footer {
+    background-color: #fff;
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.25rem;
+}
+
+/* 배지 스타일 */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    border-radius: 0.25rem;
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.badge.bg-light {
+    background-color: #e9ecef !important;
+    color: var(--primary-color) !important;
+}
+
+/* 평가 항목 스타일 */
+.border-bottom {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.border-bottom:last-child {
+    border-bottom: none !important;
+}
+
+/* 별점 스타일 */
+.star-rating {
+    color: #ffc107;
+}
+
+.bi-star-fill {
+    color: #ffc107;
+}
+
+/* 링크 스타일 */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #f8f9fa; /* 밝은 배경으로 수정 */
+    color: #212529; /* 어두운 텍스트로 */
+    padding: 2rem 0;
+}
+
+footer a {
+    color: #212529;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+footer a:hover {
+    opacity: 1;
+    color: #000;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* 로그인/회원가입 폼 */
+.login-title {
+    color: #000000 !important;
+    font-weight: 700;
+}
+
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 프로필 이미지 */
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.avatar-text {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* 강의평가 별점 */
+.star-rating {
+    display: inline-flex;
+}
+
+.star-rating .star {
+    color: #ddd;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.star-rating .star.filled {
+    color: #ffc107;
+}
+
+/* 시간표 스타일 */
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.timetable th,
+.timetable td {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.timetable th {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.timetable-cell {
+    height: 60px;
+    width: 20%;
+    padding: 0 !important;
+    position: relative;
+}
+
+/* 커뮤니티 게시글 */
+.post-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.post-item:hover {
+    background-color: var(--secondary-color);
+}
+
+.post-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* 로딩 스피너 */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.spinner-border {
+    color: var(--primary-color);
+}
+
+/* 알림 메시지 */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.toast {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* 다크 모드 스타일 */
+/* 다크모드 베이스 */
+.dark-mode {
+    background-color: #121212;
+    color: #f1f3f5;
+}
+
+/* 공통 텍스트 회색 보정 */
+.dark-mode .text-muted,
+.dark-mode .text-secondary,
+.dark-mode .bi {
+    color: #b0b3b8 !important;
+}
+
+/* Navbar */
+.dark-mode .navbar {
+    background-color: #1c1c1e !important;
+    border-bottom: 1px solid #2a2a2c;
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .nav-link {
+    color: #f1f3f5 !important;
+}
+
+/* Card / Auth Form */
+.dark-mode .card,
+.dark-mode .auth-form,
+.dark-mode .card-header,
+.dark-mode .card-footer {
+    background-color: #1e1e1e;
+    border-color: #2a2a2c;
+    color: #f1f3f5;
+}
+
+/* Tooltip */
+.dark-mode .tooltip-inner {
+    background-color: #333 !important;
+    color: #f8f9fa !important;
+    border-radius: 0.25rem;
+}
+
+.dark-mode .tooltip.bs-tooltip-top .arrow::before,
+.dark-mode .tooltip.bs-tooltip-bottom .arrow::before {
+    border-top-color: #333 !important;
+    border-bottom-color: #333 !important;
+}
+
+/* 다크 모드 푸터 스타일 - 완전히 개선 */
+.dark-mode footer {
+    background-color: #121212 !important; /* 본문과 동일한 배경색으로 통일 */
+    color: #e5e7eb !important;
+    border-top: 1px solid #2a2a2c;
+}
+
+.dark-mode footer a {
+    color: #e5e7eb !important;
+    opacity: 0.8;
+}
+
+.dark-mode footer a:hover {
+    opacity: 1;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+/* 푸터 내부 모든 요소 색상 강제 적용 */
+.dark-mode footer * {
+    background-color: transparent !important;
+}
+
+.dark-mode footer p,
+.dark-mode footer span,
+.dark-mode footer div {
+    color: #e5e7eb !important;
+}
+
+/* 섹션 제목은 더 밝은 색으로 강조 */
+.dark-mode footer h5,
+.dark-mode footer h4,
+.dark-mode footer h3,
+.dark-mode footer h2,
+.dark-mode footer h1 {
+    color: #ffffff !important; /* 더 밝은 색상으로 변경 */
+    font-weight: 600;
+}
+
+/* 푸터 내부 컨테이너 배경색 통일 */
+.dark-mode footer .container,
+.dark-mode footer .container-fluid,
+.dark-mode footer .row,
+.dark-mode footer .col,
+.dark-mode footer .col-md-4,
+.dark-mode footer .col-lg-3,
+.dark-mode footer section {
+    background-color: #121212 !important;
+}
+
+/* 카드 및 기타 요소 배경 */
+.dark-mode footer .card,
+.dark-mode footer .toast {
+    background-color: #2a2a2c !important;
+    border-color: #3a3a3c !important;
+}
+
+/* Bootstrap Icon 명시 */
+.dark-mode .bi {
+    color: #ccc !important;
+}
+
+/* Form */
+.dark-mode .form-control {
+    background-color: #2a2a2c;
+    color: #f1f3f5;
+    border-color: #3a3a3c;
+}
+
+.dark-mode .form-control::placeholder {
+    color: #adb5bd;
+}
+
+/* Buttons */
+.dark-mode .btn-outline-secondary {
+    color: #ced4da;
+    border-color: #444;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+    background-color: #2d2d2d;
+}
+
+/* Badge 밝기 조정 */
+.dark-mode .badge.bg-light {
+    background-color: #3a3a3c !important;
+    color: #f1f3f5 !important;
+}
+
+/* Posts */
+.dark-mode .post-meta {
+    color: #adb5bd;
+}
+
+.dark-mode .post-item {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #2a2a2c;
+}
+
+.dark-mode .post-item:hover {
+    background-color: #2a2a2c;
+}
+
+/* Timetable */
+.dark-mode .timetable th,
+.dark-mode .timetable td {
+    background-color: #1e1e1e;
+    color: #f1f3f5;
+    border-color: #3a3a3c;
+}
+
+.dark-mode .timetable th {
+    background-color: #2a2a2c;
+    color: #e5e7eb;
+    font-weight: 600;
+}
+
+/* Toast */
+.dark-mode .toast {
+    background-color: #2a2a2c;
+    color: #f1f3f5;
+}
+
+/* Spinner */
+.dark-mode .spinner-border {
+    color: var(--primary-color);
+}
+
+/* 커뮤니티 페이지 스타일 */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.post-title {
+    color: #333;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.post-title:hover {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.badge-hot {
+    background-color: #ef4444;
+    color: white;
+}
+
+.badge-category {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.post-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.post-stats i {
+    margin-right: 4px;
+}
+
+/* 탭 스타일 - 라이트 모드 */
+.nav-tabs {
+    background-color: #f1f3f5;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.nav-tabs .nav-link {
+    color: #6b7280;
+    background-color: #e9ecef;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-right: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #374151;
+    background-color: #dee2e6;
+}
+
+.nav-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+}
+
+/* 탭 스타일 - 다크 모드 개선 */
+.dark-mode .nav-tabs {
+    background-color: #121212 !important;
+    border-bottom: 1px solid #3a3a3c;
+}
+
+.dark-mode .nav-tabs .nav-link {
+    color: #d1d5db;
+    background-color: #2d2d2d;
+    border: 1px solid #3a3a3c;
+}
+
+.dark-mode .nav-tabs .nav-link:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+    color: #ffffff !important;
+    background-color: #4263eb;
+    border-color: #4263eb;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 시간표 페이지 탭 컨테이너 수정 */
+.dark-mode .timetable-container {
+    background-color: #121212 !important;
+    border: none !important;
+}
+
+.dark-mode .tab-content {
+    background-color: #121212 !important;
+}
+
+/* 시간표 페이지 전체 컨테이너 */
+.dark-mode .timetable-page-container {
+    background-color: #121212 !important;
+    border: none !important;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-form .bi-search {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: #9ca3af;
+}
+
+.search-input {
+    padding-left: 40px;
+    border-radius: 20px;
+}
+
+.btn-write {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+.btn-write:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+.pagination .page-link {
+    color: #4f46e5;
+    border-radius: 5px;
+    margin: 0 3px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+/* 게시글 상세 페이지 스타일 */
+.post-content {
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.post-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+.comment-item {
+    border-radius: 10px;
+    background-color: #f9fafb;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.comment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.comment-author {
+    font-weight: 600;
+}
+
+.comment-date {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.comment-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.comment-actions .btn {
+    font-size: 0.85rem;
+    padding: 3px 10px;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    color: #4b5563;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    color: #4f46e5;
+}
+
+.btn-like {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.btn-like.active {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btn-share {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.btn-report {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* 게시글 작성/수정 페이지 스타일 */
+.form-control:focus,
+.form-select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);
+}
+
+.btn-submit {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.btn-submit:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+/* 댓글 아이템 스타일 개선 */
+.comment-item {
+    border-radius: 10px;
+    background-color: #f9fafb;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.comment-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.comment-date {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.comment-content {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #1f2937;
+}
+
+.comment-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.comment-actions .btn {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.comment-actions .btn.active {
+    background-color: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+}
+
+/* 다크 모드에서의 댓글 스타일 */
+.dark-mode .comment-item {
+    background-color: #2a2a2c;
+    border-color: #3a3a3c;
+}
+
+.dark-mode .comment-meta,
+.dark-mode .comment-actions {
+    border-color: #3a3a3c;
+}
+
+.dark-mode .comment-author {
+    color: #e5e7eb;
+}
+
+.dark-mode .comment-content {
+    color: #d1d5db;
+}
+
+/* 시간표 관련 추가 스타일 */
+.timetable-card,
+#timetableView .card,
+#course-list-view .card,
+#courseList .card {
+    transition: none !important;
+    transform: none !important;
+}
+
+.timetable-card:hover,
+#timetableView .card:hover,
+#course-list-view .card:hover,
+#courseList .card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.no-hover {
+    transition: none !important;
+    transform: none !important;
+}
+
+.no-hover:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 시간표 셀 스타일 */
+.timetable-cell {
+    position: relative;
+    height: 60px;
+    min-width: 100px;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+.timetable-cell.drag-over {
+    background-color: #e9ecef;
+}
+
+/* 강의 아이템 스타일 */
+.course-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-item-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.course-item .course-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-item .course-professor,
+.course-item .course-location {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 강의 평가 스타일 */
+.evaluation-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.evaluation-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.evaluation-content {
+    margin: 10px 0;
+}
+
+/* 다크 모드 시간표 스타일 개선 */
+.dark-mode .timetable {
+    border-color: #3a3a3c;
+}
+
+.dark-mode .timetable th {
+    background-color: #2a2a2c;
+    color: #e5e7eb;
+    border-color: #3a3a3c;
+}
+
+.dark-mode .timetable td {
+    background-color: #1e1e1e;
+    border-color: #3a3a3c;
+}
+
+.dark-mode .timetable-cell {
+    background-color: #1e1e1e;
+    border-color: #3a3a3c;
+}
+
+.dark-mode .timetable-cell.drag-over {
+    background-color: #2a2a2c;
+}
+
+.dark-mode .course-item-inner {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .evaluation-item {
+    background-color: #2a2a2c;
+    border-color: #3a3a3c;
+}
+
+/* 시간표 탭 스타일 개선 */
+.timetable-tabs .nav-link {
+    color: #4b5563;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 1px solid transparent;
+    margin-right: 0.5rem;
+    font-weight: 500;
+    background-color: #f1f1f1;
+}
+
+.timetable-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/* 다크 모드 - 비활성 탭 */
+.dark-mode .timetable-tabs .nav-link {
+    color: #e5e7eb;
+    background-color: #2d2d2d;
+    border-color: transparent;
+}
+
+/* 다크 모드 - 활성 탭 */
+.dark-mode .timetable-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: #3a3a3c;
+    border-bottom: 2px solid var(--primary-color);
+    border-color: #4a4a4c;
+    font-weight: 600;
+}
+
+/* 시간표 페이지 전체 배경 수정 */
+.dark-mode .card-body {
+    background-color: #1e1e1e !important;
+}
+
+/* 시간표 페이지 탭 컨테이너 주변 흰색 배경 제거 */
+.dark-mode .tab-container,
+.dark-mode .nav-tabs-wrapper,
+.dark-mode .timetable-wrapper,
+.dark-mode .timetable-container,
+.dark-mode .timetable-content,
+.dark-mode .tab-pane,
+.dark-mode .tab-content > .active,
+.dark-mode .tab-content,
+.dark-mode .nav-tabs,
+.dark-mode ul.nav-tabs,
+.dark-mode .nav-tabs-container,
+.dark-mode .card,
+.dark-mode .card-header,
+.dark-mode .card-footer,
+.dark-mode .card > .list-group {
+    background-color: #121212 !important;
+    border-color: #2a2a2c !important;
+}
+
+/* 시간표 페이지 전체 컨테이너 */
+.dark-mode .container,
+.dark-mode .container-fluid,
+.dark-mode .row,
+.dark-mode .col,
+.dark-mode .col-md-12,
+.dark-mode .col-lg-12 {
+    background-color: #121212 !important;
+}
+
+/* 시간표 페이지 내부 모든 요소 배경 수정 */
+.dark-mode #timetableView,
+.dark-mode #course-list-view,
+.dark-mode .timetable-view,
+.dark-mode .course-list-view {
+    background-color: #121212 !important;
+}
+
+/* 시간표 탭 스타일 개선 */
+.dark-mode .timetable-tabs .nav-link {
+    color: #e5e7eb;
+    background-color: #2d2d2d;
+    border-color: transparent;
+}
+
+.dark-mode .timetable-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: #3a3a3c;
+    border-bottom: 2px solid var(--primary-color);
+    border-color: #4a4a4c;
+    font-weight: 600;
+}
+
+/* 시간표 페이지 내의 모든 요소에 대한 배경색 강제 적용 */
+.dark-mode [class*="timetable"],
+.dark-mode [id*="timetable"],
+.dark-mode [class*="course-list"],
+.dark-mode [id*="course-list"] {
+    background-color: #121212 !important;
+}
+
+/* 시간표 페이지 내의 모든 카드 스타일 강제 적용 */
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    border-color: #2a2a2c !important;
+}
+
+/* 시간표 페이지 내의 모든 탭 컨테이너 스타일 강제 적용 */
+.dark-mode .nav-tabs,
+.dark-mode .nav-tabs .nav-item,
+.dark-mode .nav-tabs .nav-link:not(.active) {
+    background-color: #121212 !important;
+    border-color: #2a2a2c !important;
+}
+
+/* 시간표 페이지 내의 모든 흰색 배경 요소 강제 제거 */
+.dark-mode .bg-white,
+.dark-mode .bg-light,
+.dark-mode [style*="background-color: white"],
+.dark-mode [style*="background-color: #fff"],
+.dark-mode [style*="background-color: #ffffff"] {
+    background-color: #121212 !important;
+}
+
+/* ===== 새로 추가된 스타일 ===== */
+
+/* 2. 강의 정보 모달 다크 모드 스타일링 */
+.dark-mode .modal-content {
+    background-color: #1e1e1e !important;
+    border-color: #2a2a2c !important;
+    color: #f1f3f5 !important;
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+    background-color: #1e1e1e !important;
+    border-color: #3a3a3c !important;
+}
+
+.dark-mode .modal-body {
+    background-color: #1e1e1e !important;
+}
+
+/* 모달 내 탭 스타일링 - 배경색 수정 */
+.dark-mode .modal .nav-tabs {
+    background-color: #1e1e1e !important; /* 모달과 동일한 색상으로 변경 */
+    border-bottom: 1px solid #3a3a3c !important;
+}
+
+.dark-mode .modal .nav-tabs .nav-link {
+    color: #d1d5db !important;
+    background-color: #2d2d2d !important;
+    border: 1px solid #3a3a3c !important;
+}
+
+.dark-mode .modal .nav-tabs .nav-link:hover {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .modal .nav-tabs .nav-link.active {
+    color: #ffffff !important;
+    background-color: #4263eb !important;
+    border-color: #4263eb !important;
+    font-weight: 600 !important;
+}
+
+/* 모달 내 탭 콘텐츠 스타일링 */
+.dark-mode .modal .tab-content,
+.dark-mode .modal .tab-pane {
+    background-color: #1e1e1e !important;
+    color: #f1f3f5 !important;
+}
+
+/* 모달 내 강의 정보 스타일링 - 배경색 수정 */
+.dark-mode #info-view,
+.dark-mode #course-info,
+.dark-mode #evaluation-view,
+.dark-mode #course-evaluation {
+    background-color: #1e1e1e !important; /* 모달과 동일한 색상으로 변경 */
+    color: #f1f3f5 !important;
+}
+
+.dark-mode #infoCourseName,
+.dark-mode .modal h5 {
+    color: #f1f3f5 !important;
+}
+
+/* 모달 내 아이콘 색상 */
+.dark-mode .modal .bi {
+    color: #b0b3b8 !important;
+}
+
+/* 모달 내 버튼 스타일링 */
+.dark-mode .modal .btn-secondary {
+    background-color: #3a3a3c !important;
+    border-color: #4a4a4c !important;
+    color: #f1f3f5 !important;
+}
+
+.dark-mode .modal .btn-primary {
+    background-color: #4263eb !important;
+    border-color: #3b5bdb !important;
+}
+
+.dark-mode .modal .btn-danger {
+    background-color: #e53e3e !important;
+    border-color: #c53030 !important;
+}
+
+/* 강의 평가 아이템 스타일링 */
+.dark-mode .modal .evaluation-item {
+    background-color: #2a2a2c !important;
+    border-color: #3a3a3c !important;
+    color: #f1f3f5 !important;
+}
+
+.dark-mode .modal .evaluation-meta {
+    color: #b0b3b8 !important;
+}
+
+.dark-mode .modal .evaluation-feature {
+    background-color: #3a3a3c !important;
+    color: #e5e7eb !important;
+}
+
+/* 색상 선택 옵션 테두리 개선 */
+.dark-mode .modal .color-option {
+    border: 2px solid #3a3a3c !important;
+}
+
+.dark-mode .modal input[type="radio"]:checked + .color-option {
+    border: 2px solid #f1f3f5 !important;
+}
+
+/* 1. 목록 보기 탭의 강의 카드 헤더 색상 문제 해결 */
+/* 카드 헤더 배경색 보존 - 인라인 스타일 우선 적용 */
+.dark-mode .card-header[style*="background-color"] {
+    background-color: inherit !important;
+}
+
+/* 목록 보기 탭의 강의 카드 헤더 색상 보존 */
+.dark-mode #list-view .course-card .card-header {
+    background-color: inherit !important;
+}
+
+/* 강의 카드 헤더 텍스트 색상 */
+.dark-mode .card-header[style*="background-color"],
+.dark-mode #list-view .course-card .card-header {
+    color: white !important;
+}
+
+/* 강의 카드 헤더 내 드롭다운 버튼 색상 */
+.dark-mode .card-header .btn-sm {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+/* 모달 내 모든 요소 배경색 통일 */
+.dark-mode
+.modal
+*:not(.btn):not(.form-control):not(.form-select):not(.color-option):not(.evaluation-feature):not(.nav-tabs):not(
+    .nav-link
+  ) {
+    background-color: #1e1e1e !important;
+}
+
+/* 모달 내 탭 콘텐츠 패딩 추가로 시각적 구분 */
+.dark-mode .modal .tab-pane {
+    padding: 15px 0 !important;
+}
+
+/* 1. 강의 카드 헤더 색상 보존 */
+.dark-mode .card-header[style*="background-color"] {
+    background-color: inherit !important; /* 원래 설정된 배경색 유지 */
+    color: white !important; /* 텍스트 색상 흰색으로 유지 */
+}
+
+/* 목록 보기 탭의 강의 카드 헤더 색상 보존 - 더 구체적인 선택자 추가 */
+.dark-mode #list-view .card-header[style*="background-color"] {
+    background-color: inherit !important;
+    color: white !important;
+}
+
+/* 다크모드에서 인라인 스타일 우선순위 문제 해결을 위한 !important 추가 */
+.dark-mode #list-view .course-card .card-header {
+    background-color: inherit !important;
+    color: white !important;
+}
+
+/* 모달 내 폼 요소 스타일링 - 배경색 통일 */
+.dark-mode .modal .form-control,
+.dark-mode .modal .form-select,
+.dark-mode .modal select.form-select {
+    background-color: #2a2a2c !important;
+    color: #f1f3f5 !important;
+    border-color: #3a3a3c !important;
+}
+
+/* 모달 내 행(row) 및 열(col) 배경색 통일 */
+.dark-mode .modal .row,
+.dark-mode .modal .col,
+.dark-mode .modal .col-md-6,
+.dark-mode .modal .mb-3 {
+    background-color: #1e1e1e !important;
+}
+
+/* 모달 내 모든 요소 배경색 통일 */
+.dark-mode
+.modal
+*:not(.btn):not(.form-control):not(.form-select):not(.color-option):not(.evaluation-feature):not(.nav-tabs):not(
+    .nav-link
+  ) {
+    background-color: #1e1e1e !important;
+}

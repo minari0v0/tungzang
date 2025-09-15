@@ -1,0 +1,224 @@
+/* campus-life.jsp, weather.jsp, cafeteria.jsp, academic-calendar.jsp 공통 스타일 */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+.dark-mode body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+.container.page-container {
+    max-width: 1200px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+.page-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1.5rem;
+}
+.dark-mode .page-header {
+    border-bottom-color: #343a40;
+}
+.back-button {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+.back-button:hover {
+    background-color: #f1f3f5;
+    transform: scale(1.05);
+}
+.dark-mode .back-button {
+    background-color: #212529;
+    border-color: #495057;
+    color: #e0e0e0;
+}
+.dark-mode .back-button:hover {
+    background-color: #343a40;
+}
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+.dark-mode .page-subtitle {
+    color: #adb5bd;
+}
+.card-custom {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.dark-mode .card-custom {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.card-header-custom {
+    background-color: transparent;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.dark-mode .card-header-custom {
+    border-bottom-color: #343a40;
+}
+.card-body-custom {
+    padding: 1.5rem;
+}
+
+/* campus-life.jsp 전용 */
+.service-card .icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    font-size: 2rem;
+    color: #fff;
+}
+.service-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.service-card .btn-detail {
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+}
+
+/* weather.jsp 전용 */
+.weather-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+.weather-temp {
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+.weather-desc {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.weather-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+.weather-detail-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.dark-mode .weather-detail-item {
+    background-color: #2c2c2c;
+}
+.weather-detail-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.weather-detail-item .label {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+.dark-mode .weather-detail-item .label {
+    color: #adb5bd;
+}
+.weather-detail-item .value {
+    font-weight: 600;
+}
+
+/* cafeteria.jsp 전용 */
+.menu-day-card.is-today {
+    border: 2px solid var(--primary-color);
+}
+.dark-mode .menu-day-card.is-today {
+    border-color: var(--primary-light);
+}
+.menu-day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-day-header.is-today {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.dark-mode .menu-day-header.is-today {
+    background-color: var(--primary-light);
+    color: #121212;
+}
+.meal-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+.dark-mode .meal-title {
+    border-bottom-color: #343a40;
+}
+.menu-list {
+    list-style: none;
+    padding-left: 0;
+}
+.menu-list li {
+    padding: 0.25rem 0;
+}
+
+/* academic-calendar.jsp 전용 */
+.filter-buttons .btn {
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+}
+.event-card {
+    position: relative;
+    padding-left: 2.5rem;
+}
+.event-type-icon {
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.event-date {
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+.dark-mode .event-date {
+    color: #adb5bd;
+}

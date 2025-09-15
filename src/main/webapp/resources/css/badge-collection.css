@@ -1,0 +1,1206 @@
+/* Badge Collection Page Styles - LoL Tier System */
+:root {
+    /* LoL Tier Colors */
+    --tier-iron: #6e6e6e;
+    --tier-bronze: #cd7f32;
+    --tier-silver: #c0c0c0;
+    --tier-gold: #ffd700;
+    --tier-platinum: #00ffba;
+    --tier-diamond: #b9f2ff;
+    --tier-master: #9d4db3;
+    --tier-grandmaster: #e84057;
+    --tier-challenger: #00c8ff;
+
+    /* 관리자 전용 색상 */
+    --tier-admin: #ff0080;
+    --tier-admin-secondary: #00ffff;
+    --tier-admin-tertiary: #ffff00;
+
+    /* Tier Gradients */
+    --tier-iron-gradient: linear-gradient(135deg, #6e6e6e, #9e9e9e);
+    --tier-bronze-gradient: linear-gradient(135deg, #cd7f32, #e9967a);
+    --tier-silver-gradient: linear-gradient(135deg, #c0c0c0, #e0e0e0);
+    --tier-gold-gradient: linear-gradient(135deg, #ffd700, #ffeaa7);
+    --tier-platinum-gradient: linear-gradient(135deg, #00ffba, #55efc4);
+    --tier-diamond-gradient: linear-gradient(135deg, #b9f2ff, #74b9ff);
+    --tier-master-gradient: linear-gradient(135deg, #9d4db3, #a29bfe);
+    --tier-grandmaster-gradient: linear-gradient(135deg, #e84057, #fd79a8);
+    --tier-challenger-gradient: linear-gradient(135deg, #00c8ff, #0984e3);
+
+    /* 관리자 전용 그라데이션 - 무지개 효과 */
+    --tier-admin-gradient: linear-gradient(135deg, #ff0080, #00ffff, #ffff00, #ff0080);
+    --tier-admin-animated: linear-gradient(45deg, #ff0080, #ff4000, #ffff00, #00ff80, #0080ff, #8000ff, #ff0080);
+
+    /* Light versions for headers */
+    --tier-iron-light: linear-gradient(135deg, rgba(110, 110, 110, 0.8), rgba(158, 158, 158, 0.8));
+    --tier-bronze-light: linear-gradient(135deg, rgba(205, 127, 50, 0.8), rgba(233, 150, 122, 0.8));
+    --tier-silver-light: linear-gradient(135deg, rgba(192, 192, 192, 0.8), rgba(224, 224, 224, 0.8));
+    --tier-gold-light: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 234, 167, 0.8));
+    --tier-platinum-light: linear-gradient(135deg, rgba(0, 255, 186, 0.8), rgba(85, 239, 196, 0.8));
+    --tier-diamond-light: linear-gradient(135deg, rgba(185, 242, 255, 0.8), rgba(116, 185, 255, 0.8));
+    --tier-master-light: linear-gradient(135deg, rgba(157, 77, 179, 0.8), rgba(162, 155, 254, 0.8));
+    --tier-grandmaster-light: linear-gradient(135deg, rgba(232, 64, 87, 0.8), rgba(253, 121, 168, 0.8));
+    --tier-challenger-light: linear-gradient(135deg, rgba(0, 200, 255, 0.8), rgba(9, 132, 227, 0.8));
+
+    /* 관리자 전용 라이트 버전 */
+    --tier-admin-light: linear-gradient(135deg, rgba(255, 0, 128, 0.9), rgba(0, 255, 255, 0.9), rgba(255, 255, 0, 0.9));
+
+    /* Badge Collection 전용 색상 */
+    --badge-earned-bg: rgba(168, 85, 247, 0.1);
+    --badge-earned-border: rgba(168, 85, 247, 0.2);
+    --badge-not-earned-bg: #f8fafc;
+    --badge-not-earned-border: #e2e8f0;
+
+    /* 다크모드 색상 */
+    --badge-dark-bg: #0f172a;
+    --badge-dark-card: #1e293b;
+    --badge-dark-border: rgba(255, 255, 255, 0.1);
+    --badge-earned-dark-bg: rgba(168, 85, 247, 0.15);
+    --badge-earned-dark-border: rgba(168, 85, 247, 0.3);
+
+    /* Mouse tracking variables */
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+/* Header Section - Dynamic by Grade */
+.badge-collection-header {
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+/* Fix container background in header */
+.badge-collection-header .container {
+    background: transparent !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Grade-specific header backgrounds */
+.badge-collection-header.tier-새내기 {
+    background: var(--tier-iron-light);
+}
+
+.badge-collection-header.tier-초급자 {
+    background: var(--tier-bronze-light);
+}
+
+.badge-collection-header.tier-숙련자 {
+    background: var(--tier-silver-light);
+}
+
+.badge-collection-header.tier-전문가 {
+    background: var(--tier-gold-light);
+}
+
+.badge-collection-header.tier-마스터 {
+    background: var(--tier-master-light);
+}
+
+/* 관리자 전용 헤더 배경 - 화려한 애니메이션 */
+.badge-collection-header.tier-관리자 {
+    background: var(--tier-admin-light);
+    background-size: 400% 400%;
+    animation: adminGradientShift 3s ease infinite;
+    position: relative;
+}
+
+.badge-collection-header.tier-관리자::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+            45deg,
+            rgba(255, 0, 128, 0.3) 0%,
+            rgba(0, 255, 255, 0.3) 25%,
+            rgba(255, 255, 0, 0.3) 50%,
+            rgba(128, 0, 255, 0.3) 75%,
+            rgba(255, 0, 128, 0.3) 100%
+    );
+    background-size: 400% 400%;
+    animation: adminHologram 4s ease infinite;
+    z-index: 1;
+}
+
+.badge-collection-header.tier-관리자::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.3) 30%,
+            transparent 70%
+    );
+    opacity: 0.8;
+    z-index: 1;
+    animation: adminPulse 2s ease-in-out infinite;
+}
+
+@keyframes adminGradientShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes adminHologram {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+}
+
+@keyframes adminPulse {
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mouse-following spotlight effect */
+.badge-collection-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.2) 20%,
+            rgba(255, 255, 255, 0.1) 40%,
+            transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.badge-collection-header:hover::before {
+    opacity: 1;
+}
+
+/* Additional holographic effect for higher tiers */
+.badge-collection-header.tier-전문가::after,
+.badge-collection-header.tier-마스터::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            400px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 215, 0, 0.3) 0%,
+            rgba(255, 215, 0, 0.1) 30%,
+            transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.badge-collection-header.tier-마스터::after {
+    background: radial-gradient(
+            400px circle at var(--mouse-x) var(--mouse-y),
+            rgba(157, 77, 179, 0.4) 0%,
+            rgba(162, 155, 254, 0.2) 30%,
+            transparent 60%
+    );
+}
+
+.badge-collection-header.tier-전문가:hover::after,
+.badge-collection-header.tier-마스터:hover::after {
+    opacity: 1;
+}
+
+/* Advanced animations for higher tiers */
+@keyframes goldShimmer {
+    0%,
+    100% {
+        box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 25px 50px rgba(255, 215, 0, 0.5);
+    }
+}
+
+@keyframes masterPulse {
+    0%,
+    100% {
+        box-shadow: 0 20px 40px rgba(157, 77, 179, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 30px 60px rgba(157, 77, 179, 0.6);
+        transform: scale(1.02);
+    }
+}
+
+/* Grade Badge - Tier Colors */
+.grade-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+/* Grade Badge Tier Styles */
+.grade-badge.tier-새내기 {
+    background: var(--tier-iron-gradient);
+    color: white;
+    border: 2px solid #9e9e9e;
+}
+
+.grade-badge.tier-초급자 {
+    background: var(--tier-bronze-gradient);
+    color: white;
+    border: 2px solid #e9967a;
+}
+
+.grade-badge.tier-숙련자 {
+    background: var(--tier-silver-gradient);
+    color: #333;
+    border: 2px solid #e0e0e0;
+}
+
+.grade-badge.tier-전문가 {
+    background: var(--tier-gold-gradient);
+    color: #333;
+    border: 2px solid #ffeaa7;
+    animation: goldPulse 2s infinite;
+}
+
+.grade-badge.tier-마스터 {
+    background: var(--tier-master-gradient);
+    color: white;
+    border: 2px solid #a29bfe;
+    animation: masterGlow 2s infinite;
+}
+
+/* 관리자 전용 배지 스타일 - 매우 화려함 */
+.grade-badge.tier-관리자 {
+    background: var(--tier-admin-animated);
+    background-size: 400% 400%;
+    color: white;
+    border: 3px solid transparent;
+    border-image: linear-gradient(45deg, #ff0080, #00ffff, #ffff00, #ff0080) 1;
+    animation: adminBadgeRotate 3s linear infinite, adminBadgePulse 2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.grade-badge.tier-관리자::before {
+    content: "👑";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    animation: crownFloat 2s ease-in-out infinite;
+}
+
+.grade-badge.tier-관리자::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ffff00, #ff0080);
+    background-size: 400% 400%;
+    border-radius: 50px;
+    z-index: -1;
+    animation: adminBorderRotate 2s linear infinite;
+}
+
+@keyframes adminBadgeRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes adminBadgePulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 32px rgba(255, 0, 128, 0.4);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 15px 50px rgba(255, 0, 128, 0.8);
+    }
+}
+
+@keyframes adminBorderRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 400% 50%;
+    }
+}
+
+@keyframes crownFloat {
+    0%,
+    100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-60%) rotate(10deg);
+    }
+}
+
+/* Advanced grade badge animations */
+@keyframes goldPulse {
+    0%,
+    100% {
+        box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(255, 215, 0, 0.5);
+    }
+}
+
+@keyframes masterGlow {
+    0%,
+    100% {
+        box-shadow: 0 8px 32px rgba(157, 77, 179, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 15px 50px rgba(157, 77, 179, 0.6);
+        transform: scale(1.05);
+    }
+}
+
+/* Shiny effect for higher tier badges */
+.grade-badge.tier-전문가::after,
+.grade-badge.tier-마스터::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: badgeShine 3s infinite;
+}
+
+@keyframes badgeShine {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    z-index: 2;
+    position: relative;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+/* 관리자 전용 stat-card 스타일 */
+.admin-user .stat-card {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 0, 128, 0.3);
+    animation: adminStatGlow 3s ease-in-out infinite;
+}
+
+@keyframes adminStatGlow {
+    0%,
+    100% {
+        border-color: rgba(255, 0, 128, 0.3);
+        box-shadow: 0 4px 20px rgba(255, 0, 128, 0.2);
+    }
+    33% {
+        border-color: rgba(0, 255, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+    }
+    66% {
+        border-color: rgba(255, 255, 0, 0.3);
+        box-shadow: 0 4px 20px rgba(255, 255, 0, 0.2);
+    }
+}
+
+/* Remove hover lift effect from stat-card */
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Progress Info */
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    position: relative;
+}
+
+.progress-info .icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    overflow-x: auto;
+}
+
+.dark-mode .category-tabs {
+    background: var(--badge-dark-card);
+}
+
+.category-tab {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.category-tab:hover {
+    background: rgba(126, 34, 206, 0.1);
+    color: #7e22ce;
+}
+
+.category-tab.active {
+    background: #7e22ce;
+    color: white;
+    box-shadow: 0 4px 12px rgba(126, 34, 206, 0.3);
+}
+
+/* 관리자 탭 특별 스타일 */
+.category-tab[data-category="admin"] {
+    background: linear-gradient(45deg, #ff0080, #00ffff);
+    color: white;
+    animation: adminTabGlow 2s ease-in-out infinite;
+}
+
+.category-tab[data-category="admin"]:hover,
+.category-tab[data-category="admin"].active {
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ffff00);
+    background-size: 200% 200%;
+    animation: adminTabShift 1s ease infinite;
+}
+
+@keyframes adminTabGlow {
+    0%,
+    100% {
+        box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+    }
+}
+
+@keyframes adminTabShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.dark-mode .category-tab {
+    color: #94a3b8;
+}
+
+.dark-mode .category-tab:hover {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+}
+
+/* Badge Grid */
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Badge Card - Next.js Inspired */
+.badge-card {
+    position: relative;
+    background: var(--badge-not-earned-bg);
+    border: 1px solid var(--badge-not-earned-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Earned badges - with hover effects */
+.badge-card.earned::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.badge-card.earned:hover::before {
+    left: 100%;
+}
+
+.badge-card.earned:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(126, 34, 206, 0.2);
+}
+
+/* 관리자 사용자의 배지 카드 특별 효과 */
+.admin-user .badge-card.earned {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box, linear-gradient(45deg, #ff0080, #00ffff, #ffff00) border-box;
+    animation: adminCardGlow 3s ease-in-out infinite;
+}
+
+.admin-user .badge-card.earned:hover {
+    transform: translateY(-8px) scale(1.05);
+    animation: adminCardPulse 0.5s ease-in-out;
+}
+
+@keyframes adminCardGlow {
+    0%,
+    100% {
+        box-shadow: 0 8px 25px rgba(255, 0, 128, 0.3);
+    }
+    33% {
+        box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+    }
+    66% {
+        box-shadow: 0 8px 25px rgba(255, 255, 0, 0.3);
+    }
+}
+
+@keyframes adminCardPulse {
+    0%,
+    100% {
+        transform: translateY(-8px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-12px) scale(1.08);
+    }
+}
+
+/* Not earned badges - NO hover effects */
+.badge-card:not(.earned) {
+    opacity: 0.7;
+}
+
+.badge-card:not(.earned):hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--badge-not-earned-border);
+}
+
+/* Earned Badge */
+.badge-card.earned {
+    background: var(--badge-earned-bg);
+    border-color: var(--badge-earned-border);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+}
+
+.badge-card.earned:hover {
+    box-shadow: 0 20px 40px rgba(168, 85, 247, 0.25);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.badge-card.earned::after {
+    content: "✓";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 24px;
+    height: 24px;
+    background: #7e22ce;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(126, 34, 206, 0.3);
+}
+
+/* 관리자 배지 체크마크 특별 스타일 */
+.admin-user .badge-card.earned::after {
+    content: "👑";
+    background: linear-gradient(45deg, #ff0080, #00ffff);
+    animation: adminCheckRotate 2s linear infinite;
+}
+
+@keyframes adminCheckRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Badge Icon */
+.badge-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    color: #64748b;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-card.earned .badge-icon {
+    background: linear-gradient(135deg, #a855f7, #7e22ce);
+    color: white;
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+}
+
+/* 관리자 배지 아이콘 특별 스타일 */
+.admin-user .badge-card.earned .badge-icon {
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ffff00);
+    background-size: 200% 200%;
+    animation: adminIconShift 2s ease infinite;
+    box-shadow: 0 8px 25px rgba(255, 0, 128, 0.5);
+}
+
+@keyframes adminIconShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Icon shine effect only for earned badges */
+.badge-icon::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.badge-card.earned:hover .badge-icon::before {
+    opacity: 1;
+    animation: iconShine 1s ease-in-out;
+}
+
+@keyframes iconShine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Badge Content */
+.badge-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+    text-align: center;
+}
+
+.badge-description {
+    color: #64748b;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Badge Section Styles */
+.badge-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--badge-not-earned-border);
+}
+
+.badge-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+}
+
+/* 관리자 섹션 제목 특별 스타일 */
+.admin-user .section-title {
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: adminTitleShine 3s ease-in-out infinite;
+}
+
+@keyframes adminTitleShine {
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.3);
+    }
+}
+
+/* Badge Card State Styles */
+.badge-card.earned {
+    border-color: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.badge-card.in-progress {
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+/* Earned Date */
+.earned-date {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: rgba(34, 197, 94, 0.8);
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-top: 1rem;
+}
+
+.progress-bar-wrapper {
+    background: #e2e8f0;
+    border-radius: 50px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7e22ce, #a855f7);
+    border-radius: 50px;
+    transition: width 0.8s ease;
+    position: relative;
+}
+
+.progress-bar-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: progressShine 2s infinite;
+}
+
+@keyframes progressShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Dark Mode */
+.dark-mode .badge-collection-header {
+    /* Keep the same tier colors in dark mode */
+}
+
+/* Ensure header container stays transparent in dark mode */
+.dark-mode .badge-collection-header .container {
+    background: transparent !important;
+}
+
+.dark-mode .badge-card {
+    background: var(--badge-dark-card);
+    border-color: var(--badge-dark-border);
+}
+
+.dark-mode .badge-card.earned {
+    background: var(--badge-earned-dark-bg);
+    border-color: var(--badge-earned-dark-border);
+}
+
+.dark-mode .badge-title {
+    color: #e2e8f0;
+}
+
+.dark-mode .badge-description {
+    color: #94a3b8;
+}
+
+.dark-mode .progress-text {
+    color: #94a3b8;
+}
+
+.dark-mode .progress-bar-wrapper {
+    background: #374151;
+}
+
+.dark-mode .badge-icon {
+    background: linear-gradient(135deg, #374151, #4b5563);
+    color: #9ca3af;
+}
+
+.dark-mode .badge-card.earned .badge-icon {
+    background: linear-gradient(135deg, #a855f7, #7e22ce);
+    color: white;
+}
+
+.dark-mode .section-title {
+    color: #e2e8f0;
+}
+
+.dark-mode .badge-section {
+    border-bottom-color: var(--badge-dark-border);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8fafc;
+    border: 2px dashed #e2e8f0;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.dark-mode .empty-state {
+    background: var(--badge-dark-card);
+    border-color: var(--badge-dark-border);
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+}
+
+.dark-mode .empty-state-icon {
+    color: #6b7280;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.dark-mode .empty-state h3 {
+    color: #e5e7eb;
+}
+
+.empty-state p {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.dark-mode .empty-state p {
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .badge-collection-header {
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .badge-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .category-tabs {
+        padding: 0.25rem;
+    }
+
+    .category-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* 관리자 등급 스타일 추가 */
+.tier-관리자 {
+    background: linear-gradient(45deg, #ff0000, #00ffff, #ffff00);
+    background-size: 600% 600%;
+    animation: rainbow-bg 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-관리자::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0.3;
+    transform: translate(var(--mouse-x, 50%), var(--mouse-y, 50%));
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tier-관리자::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(255, 255, 255, 0.4) 100%
+    );
+    background-size: 200% 200%;
+    animation: shine 3s linear infinite;
+    z-index: 2;
+}
+
+.grade-badge.tier-관리자 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+}
+
+.grade-badge.tier-관리자::before {
+    content: "👑";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.badge-collection-header.tier-관리자 {
+    background: linear-gradient(
+            135deg,
+            rgba(102, 126, 234, 0.8) 0%,
+            rgba(118, 75, 162, 0.8) 50%,
+            rgba(102, 126, 234, 0.8) 100%
+    );
+    background-size: 200% 200%;
+    animation: gentleGradientShift 15s ease infinite;
+}
+
+.badge-collection-header.tier-관리자::before {
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 100%
+    );
+    background-size: 200% 200%;
+    animation: gentleShine 12s ease infinite;
+}
+
+@keyframes gentleGradientShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes gentleShine {
+    0%,
+    100% {
+        background-position: 0% 50%;
+        opacity: 0.3;
+    }
+    50% {
+        background-position: 100% 50%;
+        opacity: 0.5;
+    }
+}

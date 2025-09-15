@@ -1,0 +1,68 @@
+/* 이용약관 페이지 스타일 */
+.terms-container {
+    padding: 3rem 0;
+}
+
+.terms-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.terms-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: #333;
+}
+
+.terms-content h2:first-child {
+    margin-top: 0;
+}
+
+.terms-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.terms-content ol,
+.terms-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.terms-content li {
+    margin-bottom: 0.5rem;
+}
+
+.terms-content ul li {
+    list-style-type: disc;
+}
+
+.terms-content ol li {
+    list-style-type: decimal;
+}
+
+.terms-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 2rem 0;
+    }
+
+    .terms-content {
+        padding: 1.5rem;
+    }
+
+    .terms-content h2 {
+        font-size: 1.25rem;
+    }
+}
